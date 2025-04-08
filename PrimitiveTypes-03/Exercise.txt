@@ -1,0 +1,14 @@
+1. Declare the following variables with appropriate primitive types:
+
+    A temperature value of 22.5
+
+    A user's name "White"
+
+    A status that is either true or false
+
+2. Create a function calculateTax(price: number): number that returns 18% of the given price.
+
+3. Create a function notifyUser() that logs "Notification Sent" and returns void.
+
+4. Write a function exitApp() that throws an error "Application crashed!" and use the never return type.
+

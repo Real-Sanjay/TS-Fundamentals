@@ -1,0 +1,33 @@
+1. Declare the following variables with appropriate primitive types:
+
+    A temperature value of 22.5
+
+    A user's name "White"
+
+    A status that is either true or false
+
+soln: 
+
+const temperature: number = 22.5;
+
+const userName: string = "White";
+
+let status: boolean = true;
+
+
+2. Create a function calculateTax(price: number): number that returns 18% of the given price.
+ 
+ function calculateTax(price: number) : number {
+    return (18/100)*price;
+ }
+
+3. Create a function notifyUser() that logs "Notification Sent" and returns void.
+
+function notifyUser() : void {
+    console.log("Notification Sent");
+}
+
+4. Write a function exitApp() that throws an error "Application crashed!" and use the never return type.
+function exitApp() : never {
+    throw new Error("exited");
+}

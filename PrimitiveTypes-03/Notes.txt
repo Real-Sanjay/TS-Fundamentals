@@ -1,0 +1,63 @@
+ Primitive Types [(00:41:51)](https://www.youtube.com/watch?v=iJkaAJUzeWQ&t=2511s)
+
+In TypeScript, primitive types are the most fundamental data types. These include:
+
+- `number`
+- `string`
+- `boolean`
+- `null`
+- `undefined`
+- `void`
+- `never`
+
+Primitive types can be implicitly inferred by TypeScript or explicitly declared.
+
+
+
+✅ Number 
+
+Represents numeric values including integers, floating-point numbers, `Infinity`, and `NaN`.
+
+code
+
+let age: number = 25;
+let temperature = 36.6; // inferred as number
+let infinite: number = Infinity;
+
+💡 Always use lowercase number for type annotation.
+
+✅ String 
+Represents a sequence of characters enclosed in 'single', "double" or `backtick` quotes.
+
+let firstName: string = "Alice";
+let greeting = `Hello, ${firstName}!`;
+
+✅ Boolean
+Can only be true or false.
+
+let isLoggedIn: boolean = true;
+let hasPermission = false; // inferred as boolean
+
+
+✅ Null & Undefined
+null: Explicitly defines a variable as empty or non-existent.
+undefined: A variable that has been declared but not assigned a value yet.
+
+let user: null = null;
+let score: number | undefined;
+
+✅ Void
+Used when a function doesn't return anything.
+
+function logMessage(message: string): void {
+  console.log(message);
+}
+
+✅ Never
+Used when a function never returns (e.g., it throws an error or runs an infinite loop).
+
+function throwError(msg: string): never {
+  throw new Error(msg);
+}
+
+Reference: https://www.typescriptlang.org/docs/handbook/2/everyday-types.html

@@ -1,0 +1,38 @@
+✅ Step 1: Create a Project Folder
+
+mkdir ts-node-project
+cd ts-node-project
+
+✅ Step 2: Initialize Node.js Project(before this make sure node js is installed by using command "node -v")
+
+npm init -y
+This creates a package.json file.
+
+✅ Step 3: Install TypeScript 
+
+npm install typescript --save-dev
+
+
+✅ Step 4: Initialize TypeScript Configuration
+
+npx tsc --init
+This creates a tsconfig.json file. You can update some settings to match Node.js usage:
+
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "rootDir": "src",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
+✅ Step 5: Create Project Structure and Compile TypeScript Code
+
+tsc filename.ts
+This compiles your TypeScript files into JavaScript under the dist folder.
+
+✅ Step 7: Run Compiled Code
+node filename.ts
