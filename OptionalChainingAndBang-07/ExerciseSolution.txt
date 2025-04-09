@@ -1,0 +1,33 @@
+Exercise 1:
+Create a user object with optional profile and email. Use optional chaining to access email.
+soln:
+const user ={
+    profile: {
+        name: "unknown"
+    }
+}
+
+console.log(user?.profile?.email) // undefined, no error
+
+Exercise 2:
+Create a function that might return undefined. Use the bang operator to force access to its result.
+soln:
+function isname(name: string | undefined){
+    if(typeof name === "string") return name + "is a string";
+    return undefined;
+}
+
+const isString = isname("dogiie");
+console.log(isString!.length()) // Works, but risky if getMessage() returns undefined
+
+Exercise 3:
+Refactor the following code using optional chaining:
+
+code
+
+if (person && person.address && person.address.city) {
+  console.log(person.address.city);
+}
+
+soln:
+if(person?.address?.city) console.log(person.address.city);

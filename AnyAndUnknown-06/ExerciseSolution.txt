@@ -1,0 +1,22 @@
+Exercise 1:
+Create a variable using any, assign multiple types of values to it, and perform operations. Observe what happens
+soln:
+let data: any = 42;
+data = "Now I'm a string!";
+console.log(data.toUpperCase()); // No error, but might fail at runtime if not a string
+
+Exercise 2:
+Create a variable using unknown, assign values, and safely access the data using type checking.
+soln:
+let input: unknown = "Typescript";
+
+if (typeof input === "string") {
+  console.log("Uppercased:", input.toUpperCase());
+}
+
+Exercise 3:
+Use type assertion to safely call string methods on an unknown value.
+soln:
+let val: unknown = "Hello World";
+let length = (val as string).length;
+console.log(length);

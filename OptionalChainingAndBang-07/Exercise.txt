@@ -1,0 +1,18 @@
+🧪 Exercises
+Exercise 1:
+Create a user object with optional profile and email. Use optional chaining to access email.
+
+Exercise 2:
+Create a function that might return undefined. Use the bang operator to force access to its result.
+
+Exercise 3:
+Refactor the following code using optional chaining:
+
+code
+
+if (person && person.address && person.address.city) {
+  console.log(person.address.city);
+}
+
+soln: 
+console.log(person?.address?.city); // cleaner and safer

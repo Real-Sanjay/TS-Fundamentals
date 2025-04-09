@@ -1,0 +1,35 @@
+
+Exercise 1: Create a literal type that accepts only the string "small", "medium", or "large" for a variable size.
+soln:
+const Size: 'small' | 'medium' | 'large';
+let size: Size = "medium";
+
+Exercise 2: Define a numeric enum Priority with values: Low, Medium, High.
+soln:
+enum Level {
+    Low, 
+    Medium,
+    High
+}
+let task: Level = Level.High;
+
+Exercise 3: Create a string enum PaymentStatus with values: "PENDING", "COMPLETED", "FAILED".
+soln:
+enum PaymentStatus {
+    pending = "PENDING",
+    completed = "COMPLETED",
+    Failed = "FAILED"
+}
+
+Exercise 4: Write a function getStatusMessage(status: PaymentStatus): string that returns different messages for each enum value.
+
+function getStatusMessage(status: PaymentStatus): string {
+  switch (status) {
+    case PaymentStatus.Pending:
+      return "Payment is still pending.";
+    case PaymentStatus.Completed:
+      return "Payment completed successfully.";
+    case PaymentStatus.Failed:
+      return "Payment failed. Please retry.";
+  }
+}

@@ -1,0 +1,42 @@
+2.2 - Arrays & Tuples
+🔹 Arrays in TypeScript
+In TypeScript, arrays are ordered collections of elements. It is highly recommended to use arrays with homogeneous types (same data type) for better type checking and consistency.
+
+Syntax
+
+// Array of numbers
+const numbers: number[] = [1, 2, 3, 4];
+
+// Array of strings
+const fruits: string[] = ["apple", "banana", "orange"];
+
+// Empty array with explicit type
+const emptyList: string[] = [];
+
+Nested Arrays
+
+// 2D array of numbers
+const matrix: number[][] = [
+  [1, 2],
+  [3, 4],
+];
+
+
+🔹 Tuples in TypeScript
+A tuple is a fixed-length array where the types of elements are known and can differ. This provides stronger type hinting and type safety than arrays.
+
+Syntax
+
+// Tuple with string and number
+const person: [string, number] = ["Alice", 30];
+
+// Tuple with boolean, number, and string
+const data: [boolean, number, string] = [true, 100, "OK"];
+You can even nest tuples or use them in arrays:
+
+
+const records: [string, number][] = [
+  ["Alice", 25],
+  ["Bob", 32],
+];
+

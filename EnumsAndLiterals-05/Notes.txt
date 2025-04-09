@@ -1,0 +1,66 @@
+ Enums & Literals
+
+🔹 Literals in TypeScript
+Literal types in TypeScript allow you to specify exact values a variable can take. They’re useful for restricting variable assignments to specific values only.
+
+✅ Example – Literal Types
+
+let direction: "left" | "right" | "up" | "down";
+
+direction = "left";    // ✅ Valid
+direction = "right";   // ✅ Valid
+// direction = "forward"; ❌ Error: not allowed
+You can also use boolean or number literals:
+
+
+let isActive: true;
+isActive = true;
+// isActive = false; ❌ Error
+Literal types are especially powerful when used with union types for strict control over allowed values.
+
+
+🔹 Enums in TypeScript
+Enums (short for enumerations) allow you to define a set of named constants — making your code more readable and manageable.
+
+There are two main types:
+
+1. Numeric Enums
+
+enum Direction {
+  Up,     // 0
+  Down,   // 1
+  Left,   // 2
+  Right   // 3
+}
+
+let move: Direction = Direction.Up;
+console.log(move); // Output: 0
+You can assign custom numeric values:
+
+
+enum StatusCode {
+  Success = 200,
+  NotFound = 404,
+  ServerError = 500
+}
+2. String Enums
+
+enum LogLevel {
+  Info = "INFO",
+  Warning = "WARNING",
+  Error = "ERROR"
+}
+
+let level: LogLevel = LogLevel.Warning;
+console.log(level); // Output: "WARNING"
+
+🔧 When to Use Enums
+    To group related constants
+
+    For better autocomplete in IDEs
+
+    To avoid magic strings or numbers
+
+    For easier refactoring and renaming
+
+

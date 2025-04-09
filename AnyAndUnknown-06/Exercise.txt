@@ -1,0 +1,9 @@
+🧪 Exercises
+Exercise 1:
+Create a variable using any, assign multiple types of values to it, and perform operations. Observe what happens.
+
+Exercise 2:
+Create a variable using unknown, assign values, and safely access the data using type checking.
+
+Exercise 3:
+Use type assertion to safely call string methods on an unknown value.

@@ -1,0 +1,5 @@
+
+Exercise 1: Create a TypeScript array of 5 boolean values.
+Exercise 2: Define a tuple for a product with: name (string), price (number), and availability (boolean).
+Exercise 3: Create an array of tuples representing student data with name and score.
+Exercise 4: Create a nested array of strings for categories and subcategories.

@@ -1,0 +1,65 @@
+     Any, Unknown & Type Casts 
+
+     Concept Overview
+
+TypeScript introduces `any` and `unknown` to handle variables when the type is uncertain or dynamic:
+
+🔹 `any` Type
+- Using `any` disables type checking.
+- You can assign any value to a variable with `any`, and perform any operations on it—no compile-time errors.
+- Use sparingly, as it can lead to bugs.
+
+
+let randomValue: any = 10;
+randomValue = "Hello";
+randomValue = true;
+
+console.log(randomValue.toUpperCase()); // No error, even if it might crash at runtime
+
+🔸 unknown Type
+Safer alternative to any.
+
+Requires type checking before usage.
+
+Helps maintain type safety.
+code
+
+let userInput: unknown = "TypeScript";
+
+if (typeof userInput === "string") {
+  console.log(userInput.toUpperCase()); // Safe usage
+}
+
+🛠️ Type Assertion (Type Casting)
+Allows you to tell the compiler the exact type of a variable.
+
+Useful when you're sure of the type after validations or special scenarios.
+code
+
+let someValue: unknown = "This is a string";
+let strLength: number = (someValue as string).length;
+
+console.log(strLength);
+
+
+✅ Real-World Scenario
+Imagine you're building a form that accepts user input from different fields: number, string, boolean, or even a file. When reading from event.target.value, it often comes in as an any or unknown type.
+
+Instead of blindly using any, you can check the type before processing:
+code
+
+function processInput(input: unknown) {
+  if (typeof input === "string") {
+    console.log("It's a string of length:", input.length);
+  } else if (typeof input === "number") {
+    console.log("It's a number. Square:", input * input);
+  } else {
+    console.log("Unsupported type.");
+  }
+}
+
+
+
+
+
+

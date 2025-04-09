@@ -1,0 +1,5 @@
+Exercises
+Exercise 1: Create a literal type that accepts only the string "small", "medium", or "large" for a variable size.
+Exercise 2: Define a numeric enum Priority with values: Low, Medium, High.
+Exercise 3: Create a string enum PaymentStatus with values: "PENDING", "COMPLETED", "FAILED".
+Exercise 4: Write a function getStatusMessage(status: PaymentStatus): string that returns different messages for each enum value.
