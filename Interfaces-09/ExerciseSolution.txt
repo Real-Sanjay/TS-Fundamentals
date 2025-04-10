@@ -1,0 +1,46 @@
+Exercise 1:
+Create an interface Book with title, author, and optional publishedYear. Define a variable book1 of type Book.
+soln:
+interface Book {
+  title: string;
+  author: string;
+  publishedYear?: number;
+}
+
+const book1: Book = {
+  title: "Atomic Habits",
+  author: "James Clear"
+};
+
+Exercise 2:
+Define an interface Vehicle with properties: make, model, and a method start(). Create an object of this type.
+soln:
+interface Vehicle {
+  make: string;
+  model: string;
+  start(): void;
+}
+
+const car: Vehicle = {
+  make: "Toyota",
+  model: "Camry",
+  start() {
+    console.log("Engine started");
+  }
+};
+
+Exercise 3:
+Create two interfaces: Person with name, and Employee that extends Person with empId. Create an object of type Employee.
+soln: 
+interface Person {
+  name: string;
+}
+
+interface Employee extends Person {
+  empId: number;
+}
+
+const employee = {
+    name:"Raju",
+    empId: 123
+}

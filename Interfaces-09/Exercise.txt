@@ -1,0 +1,9 @@
+🧪 Exercises
+Exercise 1:
+Create an interface Book with title, author, and optional publishedYear. Define a variable book1 of type Book.
+
+Exercise 2:
+Define an interface Vehicle with properties: make, model, and a method start(). Create an object of this type.
+
+Exercise 3:
+Create two interfaces: Person with name, and Employee that extends Person with empId. Create an object of type Employee.

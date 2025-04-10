@@ -1,0 +1,147 @@
+Interfaces in TypeScript
+🔹 What is an Interface?
+An interface defines the structure of an object. It ensures that any object that claims to implement the interface must follow its shape.
+
+Example:
+
+interface User {
+  id: number;
+  name: string;
+  isActive: boolean;
+}
+
+const user1: User = {
+  id: 1,
+  name: "Sanjay",
+  isActive: true
+};
+
+
+🔹 Optional Properties
+Use ? to mark a property as optional. These properties can be undefined.
+
+code: 
+interface Product {
+  id: number;
+  name: string;
+  description?: string;
+}
+
+const item: Product = { id: 101, name: "Pen" };
+
+
+🔹 Interfaces with Methods
+Interfaces can define function signatures too.
+
+code: 
+interface Logger {
+  log(message: string): void;
+}
+
+const consoleLogger: Logger = {
+  log(message) {
+    console.log("LOG:", message);
+  }
+};
+
+
+🔹 Extending Interfaces
+Interfaces can inherit from one or more other interfaces.
+
+code: 
+interface Person {
+  name: string;
+}
+
+interface Employee extends Person {
+  employeeId: number;
+}
+
+const emp: Employee = {
+  name: "Sanjay",
+  employeeId: 123
+};
+
+Multiple Interface Inheritance:
+code: 
+interface Contact {
+  email: string;
+}
+
+interface Manager extends Person, Contact {
+  teamSize: number;
+}
+
+const mgr: Manager = {
+  name: "Kavya",
+  email: "kavya@company.com",
+  teamSize: 5
+};
+
+🔹 Interfaces as Function Parameter Types
+code: 
+interface Credentials {
+  username: string;
+  password: string;
+}
+
+function login(creds: Credentials) {
+  console.log(`Logging in user: ${creds.username}`);
+}
+
+login({ username: "admin", password: "1234" });
+
+
+🌐 Real-World Scenario
+You’re building a task management system. You want to:
+
+Define a structure for users, tasks, and admins.
+
+Allow optional details like bio or dueDate.
+
+Extend interfaces so admins inherit from users but have extra permissions.
+
+code: 
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  bio?: string;
+}
+
+interface Task {
+  id: number;
+  title: string;
+  assignedTo: User;
+  dueDate?: Date;
+}
+
+interface Admin extends User {
+  role: "admin";
+  permissions: string[];
+}
+
+const task1: Task = {
+  id: 101,
+  title: "Fix bug in login",
+  assignedTo: {
+    id: 1,
+    name: "Sanjay",
+    email: "sanjay@example.com"
+  }
+};
+
+const admin1: Admin = {
+  id: 999,
+  name: "Kavya",
+  email: "kavya@example.com",
+  role: "admin",
+  permissions: ["edit", "delete", "assign"]
+};
+
+
+
+
+
+
+
