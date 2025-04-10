@@ -1,0 +1,13 @@
+🧪 Exercises
+Exercise 1:
+Write a function calculate that takes two numbers and an operation type (add, subtract, multiply) and returns the result.
+
+Exercise 2:
+Create a function greetUser that optionally accepts a title (like "Dr.", "Mr.", etc.) and returns a greeting string.
+
+Exercise 3:
+Define an overloaded function format:
+
+format(value: number): string
+
+format(value: Date): string Returns "Formatted number: X" or "Formatted date: YYYY-MM-DD".

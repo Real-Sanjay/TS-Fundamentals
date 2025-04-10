@@ -1,0 +1,98 @@
+ Function Types (Basic to Advanced)
+
+🔹 Basic Function Types
+Parameter Types
+TypeScript requires you to define parameter types to avoid implicit any.
+
+code: 
+function greet(name: string) {
+  return `Hello, ${name}`;
+}
+
+Return Types
+TypeScript can infer return types, but defining them improves readability and safety.
+
+
+code: 
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+🔹 Optional & Default Parameters
+code: 
+function log(message: string, user?: string) {
+  console.log(user ? `[${user}] ${message}` : message);
+}
+
+function register(user: string, role: string = "guest") {
+  console.log(`${user} registered as ${role}`);
+}
+
+🔹 Functions as Types
+code: 
+type MathOp = (a: number, b: number) => number;
+
+const multiply: MathOp = (x, y) => x * y;
+
+console.log(multiply(5,2)) //Outputs 10
+
+🔹 Arrays of Functions
+code: 
+const operations: MathOp[] = [
+  (a, b) => a + b,
+  (a, b) => a - b,
+  (a, b) => a * b
+];
+
+operations.forEach(fn => console.log(fn(5, 2))); // 10,8,20
+
+
+🔹 Rest Parameters
+code: 
+function sumAll(...nums: number[]): number {
+  return nums.reduce((a, b) => a + b, 0);
+}
+
+🔹 Function Overloading
+code: 
+function getData(id: number): string;
+function getData(name: string): string;
+function getData(value: number | string): string {
+  if (typeof value === "number") {
+    return `User ID is ${value}`;
+  }
+  return `User name is ${value}`;
+}
+
+
+🌐 Real-World Scenario
+You’re building a user management dashboard. You want to:
+
+Accept a userID or username to fetch user data (overloaded function)
+
+Allow an optional filter param for pagination (optional parameter)
+
+Provide a default role if not passed (default parameter)
+
+Collect dynamic tags added to a user (rest parameter)
+
+code: 
+function getUser(id: number): string;
+function getUser(username: string): string;
+function getUser(param: number | string): string {
+  return typeof param === "number"
+    ? `Fetching user with ID: ${param}`
+    : `Fetching user with username: ${param}`;
+}
+
+function assignRole(user: string, role: string = "viewer") {
+  console.log(`${user} is assigned the role of ${role}`);
+}
+
+function addTags(user: string, ...tags: string[]) {
+  console.log(`${user} has tags: ${tags.join(", ")}`);
+}
+
+
+
+

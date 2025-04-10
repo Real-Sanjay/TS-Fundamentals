@@ -1,0 +1,35 @@
+Exercise 1:
+Write a function calculate that takes two numbers and an operation type (add, subtract, multiply) and returns the result.
+soln: 
+function calculate(a: number, b: number, op: "add" | "subtract" | "multiply"): number {
+  switch (op) {
+    case "add": return a + b;
+    case "subtract": return a - b;
+    case "multiply": return a * b;
+  }
+}
+
+Exercise 2:
+Create a function greetUser that optionally accepts a title (like "Dr.", "Mr.", etc.) and returns a greeting string.
+soln: 
+function greetUser(name: string, title?: string): string {
+  return `Hello, ${title ? title + " " : ""}${name}`;
+}
+
+Exercise 3:
+Define an overloaded function format:
+
+format(value: number): string
+
+format(value: Date): string Returns "Formatted number: X" or "Formatted date: YYYY-MM-DD".
+
+soln: 
+function format(value: number): string;
+function format(value: Date): string;
+function format(value: number | Date): string {
+  if (typeof value === "number") {
+    return `Formatted number: ${value}`;
+  }
+  return `Formatted date: ${value.toISOString().split("T")[0]}`; // Converts the Date object to an ISO string, Splits the string at the "T" character.
+Retrieves the date part (the first element of the resulting array).
+}
