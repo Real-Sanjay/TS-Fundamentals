@@ -1,0 +1,90 @@
+ Classes & Interfaces
+ 
+🔷 What's the Relationship Between Classes and Interfaces?
+A class can:
+Extend another class (inherit properties/methods)
+Implement one or more interfaces (contract of required methods/properties)
+
+An interface:
+Describes a shape or structure
+Cannot contain implementation
+Is abstract by nature
+
+
+📘 implements Keyword
+When a class uses implements, it must implement all the members (properties and methods) from that interface, and all must be public.
+code: 
+interface Printable {
+  print(): void;
+}
+
+class Invoice implements Printable {
+  constructor(private total: number) {}
+
+  public print(): void {
+    console.log(`Invoice total: $${this.total}`);
+  }
+}
+
+🔁 Extending and Implementing Together
+code: 
+interface Identifiable {
+  id: number;
+}
+
+class BaseEntity {
+  createdAt: Date = new Date();
+}
+
+class User extends BaseEntity implements Identifiable {
+  constructor(public id: number, public name: string) {
+    super();
+  }
+}
+✅ User inherits createdAt from BaseEntity
+✅ User must define all from Identifiable
+
+🔀 Polymorphism with Interfaces
+You can treat different classes as the same type using interfaces.
+
+code: 
+interface Logger {
+  log(message: string): void;
+}
+
+class ConsoleLogger implements Logger {
+  log(msg: string): void {
+    console.log(`[Console]: ${msg}`);
+  }
+}
+
+class FileLogger implements Logger {
+  log(msg: string): void {
+    console.log(`[File]: ${msg} (pretend writing to file)`);
+  }
+}
+
+function performLogging(logger: Logger, msg: string) {
+  logger.log(msg);
+}
+
+const consoleLogger = new ConsoleLogger();
+const fileLogger = new FileLogger();
+
+performLogging(consoleLogger, "App started");
+performLogging(fileLogger, "Saving to logs...");
+
+🔍 Use case: Useful for Dependency Injection, where implementation can change but the interface contract stays the same.
+
+🔧 Why Use Interfaces Instead of Abstract Classes?
+Feature	                 Interface	             Abstract Class
+Implements multiple?	    ✅ Yes	            🚫 No (only one abstract class)
+Has method bodies?	        🚫 No	             ✅ Yes
+Used for contracts only?	✅ Yes	            🚫 Not ideal
+
+Use interface when:
+You only care about the structure, not behavior
+You want to decouple code and support multiple types
+
+
+

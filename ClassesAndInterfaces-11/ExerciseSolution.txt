@@ -1,0 +1,51 @@
+Exercise 1:
+Create an interface Shape with a method getArea(): number.
+Implement it in Circle and Rectangle classes.
+soln:
+interface Shape {
+  getArea(): number;
+}
+
+class Circle implements Shape {
+  constructor(private radius: number) {}
+
+  getArea(): number {
+    return Math.PI * this.radius ** 2;
+  }
+}
+
+class Rectangle implements Shape {
+  constructor(private width: number, private height: number) {}
+
+  getArea(): number {
+    return this.width * this.height;
+  }
+}
+
+Exercise 2:
+Create an interface Authenticator with a method login(user: string, pass: string): boolean.
+Implement it in two classes: EmailAuth and OtpAuth.
+
+interface Authenticator {
+  login(user: string, pass: string): boolean;
+}
+
+class EmailAuth implements Authenticator {
+  login(user: string, pass: string): boolean {
+    return user === "admin" && pass === "1234";
+  }
+}
+
+class OtpAuth implements Authenticator {
+  login(user: string, otp: string): boolean {
+    return otp === "000000";
+  }
+}
+
+Exercise 3:
+Write a function authenticateUser(auth: Authenticator) that accepts any class implementing the Authenticator interface.
+soln:
+function authenticateUser(auth: Authenticator): void {
+  const result = auth.login("admin", "1234");
+  console.log("Authenticated:", result);
+}

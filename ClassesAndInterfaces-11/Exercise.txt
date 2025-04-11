@@ -1,0 +1,11 @@
+Practice Exercises
+Exercise 1:
+Create an interface Shape with a method getArea(): number.
+Implement it in Circle and Rectangle classes.
+
+Exercise 2:
+Create an interface Authenticator with a method login(user: string, pass: string): boolean.
+Implement it in two classes: EmailAuth and OtpAuth.
+
+Exercise 3:
+Write a function authenticateUser(auth: Authenticator) that accepts any class implementing the Authenticator interface.
