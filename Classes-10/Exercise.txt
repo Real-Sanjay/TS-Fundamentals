@@ -1,0 +1,24 @@
+Exercises
+
+Exercise 1:
+Create a class Car with:
+
+public make
+
+private engineNo
+
+protected year
+
+Add a subclass ElectricCar and log the year.
+
+Exercise 2:
+Create an abstract class Animal with:
+
+abstract method makeSound()
+
+method move() that logs "Animal moves"
+
+Create a class Dog that extends Animal and implements makeSound.
+
+Exercise 3:
+Add a private property score in a class Student. Use getters and setters to control access and prevent setting scores below 0.

@@ -1,0 +1,66 @@
+Exercise 1:
+Create a class Car with:
+public make
+private engineNo
+protected year
+Add a subclass ElectricCar and log the year.
+class Car{
+  public make: string;
+  private engineNo?: number;
+  protected year: number;
+  constructor(make: string, year:number, engineNo?:number, ){
+    this.make = make;
+    this.engineNo = engineNo;
+    this.year = year;
+  }
+}
+
+class ElectricCar extends Car{
+
+  getYear(): number{
+      return this.year; 
+  }
+}
+
+const EC = new ElectricCar("Tesla", 1999);
+console.log(EC.getYear()); // 1999
+
+
+Exercise 2:
+Create an abstract class Animal with:
+abstract method makeSound()
+method move() that logs "Animal moves"
+Create a class Dog that extends Animal and implements makeSound.
+soln:
+abstract class Animal{
+  public abstract makeSound(): void;
+  public move(): void{
+    console.log("Animal moves");
+  }
+}
+
+class Dog extends Animal{
+  public makeSound(): void {
+      console.log("bow bow");
+  }
+}
+
+const dog = new Dog();
+dog.makeSound();
+dog.move();
+
+Exercise 3:
+Add a private property score in a class Student. Use getters and setters to control access and prevent setting scores below 0.
+soln:
+class Student {
+  private _score: number = 0;
+
+  get score() {
+    return this._score;
+  }
+
+  set score(val: number) {
+    if (val < 0) throw new Error("Score cannot be negative");
+    this._score = val;
+  }
+}

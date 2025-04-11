@@ -1,0 +1,127 @@
+ Classes & Abstract Classes in TypeScript
+ 
+🔹 What is a Class?
+A class is a blueprint for creating objects. In TypeScript, classes support access modifiers, inheritance, getters/setters, and abstract classes—making it fully OOP-compliant.
+
+🔐 Access Modifiers
+Modifier	Scope
+public	    Accessible anywhere (default if not specified)
+private	    Accessible only within the class where it is defined
+protected	Accessible within the class and subclasses (but not outside classes)
+
+Example:
+code: 
+class User {
+  public name: string;
+  private password: string;
+  protected role: string;
+
+  constructor(name: string, password: string, role: string) {
+    this.name = name;
+    this.password = password;
+    this.role = role;
+  }
+
+  public greet() {
+    console.log(`Hello, ${this.name}`);
+  }
+
+  private getPassword() {
+    return this.password;
+  }
+
+  protected getRole() {
+    return this.role;
+  }
+}
+
+🧱 Inheritance and Protected Access
+code: 
+class Admin extends User {
+  constructor(name: string, password: string, role: string) {
+    super(name, password, role);
+  }
+
+  showRole() {
+    console.log(`Role is: ${this.role}`); // ✅ OK (protected)
+  }
+}
+
+🛑 Abstract Classes
+Used as base classes
+
+Cannot be instantiated directly
+
+Can contain both abstract methods (no body) and concrete methods
+
+Abstract Method:
+Forces subclass to provide its own implementation.
+
+code: 
+abstract class Shape {
+  abstract getArea(): number;
+
+  describe(): void {
+    console.log("This is a shape.");
+  }
+}
+
+class Circle extends Shape {
+  constructor(private radius: number) {
+    super();
+  }
+
+  getArea(): number {
+    return Math.PI * this.radius ** 2;
+  }
+}
+
+
+🔄 Getters and Setters
+Encapsulate and control access to private/protected properties.
+
+code: 
+class Employee {
+  private _salary: number = 0;
+
+  get salary(): number {
+    return this._salary;
+  }
+
+  set salary(value: number) {
+    if (value < 0) throw new Error("Salary cannot be negative");
+    this._salary = value;
+  }
+}
+
+const emp = new Employee();
+emp.salary = 50000;
+console.log(emp.salary); // 50000
+
+🌐 Real-World Example: Banking System
+code: 
+abstract class Account {
+  constructor(protected balance: number) {}
+
+  abstract withdraw(amount: number): void;
+
+  deposit(amount: number): void {
+    this.balance += amount;
+  }
+
+  getBalance(): number {
+    return this.balance;
+  }
+}
+
+class SavingsAccount extends Account {
+  withdraw(amount: number): void {
+    if (amount > this.balance) throw new Error("Insufficient funds");
+    this.balance -= amount;
+  }
+}
+
+const sa = new SavingsAccount(1000);
+sa.deposit(500);
+sa.withdraw(300);
+console.log(sa.getBalance()); // 1200
