@@ -1,0 +1,60 @@
+Static Attributes & Methods
+🔷 What Are Static Members?
+static members (attributes or methods) belong to the class itself, not the instance.
+They are shared across all instances.
+Accessed directly using the class name, not this or object instance.
+
+📌 Syntax
+code:
+class MyClass {
+  static counter: number = 0;
+
+  static sayHello() {
+    console.log("Hello from static method!");
+  }
+}
+
+// Access
+console.log(MyClass.counter); // 0
+MyClass.sayHello();
+
+Real-World Analogy
+Think of a classroom.
+Each student is an instance (object).
+The school name is common to all students — that’s a static property.
+
+Static Attributes and Instance Comparison
+code:
+class Student {
+  static schoolName = "Greenwood High"; // Static
+
+  constructor(public name: string) {} // Instance property
+}
+
+const s1 = new Student("Sanjay");
+const s2 = new Student("Priya");
+
+console.log(Student.schoolName); // ✅ static - shared value
+console.log(s1.name);            // ✅ instance-specific
+console.log(s2.name);            // ✅ different instance-specific
+
+Static Methods with Static Data
+code:
+class Counter {
+  static count = 0;
+
+  static increment() {
+    this.count++; // `this` refers to the class itself
+  }
+
+  static getCount(): number {
+    return this.count;
+  }
+}
+Counter.increment();
+Counter.increment();
+
+console.log(Counter.getCount()); // Output: 2
+
+
+

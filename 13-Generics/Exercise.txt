@@ -1,0 +1,33 @@
+Practice Exercises
+Exercise 1:
+Create a generic function wrapInArray that:
+
+Takes any value and returns it as a single-element array.
+
+Exercise 2:
+Create a generic class Logger<T> that:
+Stores a list of values of type T
+Has a method log(value: T) to add to the list
+Has a method printAll() to print them all
+soln:
+class Logger<T> {
+  private logs: T[] = [];
+
+  log(value: T): void {
+    this.logs.push(value);
+  }
+
+  printAll(): void {
+    this.logs.forEach((item) => console.log(item));
+  }
+}
+
+const stringLogger = new Logger<string>();
+stringLogger.log("Error occurred");
+stringLogger.log("Warning!");
+stringLogger.printAll();
+
+const numberLogger = new Logger<number>();
+numberLogger.log(101);
+numberLogger.log(202);
+numberLogger.printAll();

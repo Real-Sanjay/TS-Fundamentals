@@ -1,0 +1,68 @@
+4.4 - Generics
+🔷 What Are Generics?
+Generics allow you to create reusable classes, functions, and interfaces that work with multiple types while still maintaining type safety.
+
+Instead of writing:
+
+code:
+function echoString(value: string): string {
+  return value;
+}
+
+function echoNumber(value: number): number {
+  return value;
+}
+
+You can write once using Generics:
+code:
+function echo<T>(value: T): T {
+  return value;
+}
+Now T can be any type — string, number, object, array, etc.
+
+Syntax
+code:
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+console.log(identity<string>("Hello")); // Explicit
+console.log(identity(42));              // Inferred
+
+
+Generic Classes
+code:
+class Box<T> {
+  contents: T;
+
+  constructor(value: T) {
+    this.contents = value;
+  }
+
+  getContents(): T {
+    return this.contents;
+  }
+}
+
+const stringBox = new Box<string>("Books");
+console.log(stringBox.getContents()); // Books
+
+const numberBox = new Box<number>(123);
+console.log(numberBox.getContents()); // 123
+
+
+Generic Functions
+code:
+function merge<T, U>(a: T, b: U): [T, U] {
+  return [a, b];
+}
+
+const result = merge<string, number>("age", 25); // ['age', 25]
+⚡Inferred vs Explicit Types
+code:
+identity<number>(100); // Explicitly declared
+identity("Hi");        // Inferred as string
+
+
+
+Generics keep your code DRY, clean, and safe. Super useful when building libraries or reusable components in Angular/React/Node or APIs.

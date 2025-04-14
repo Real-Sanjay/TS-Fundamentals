@@ -1,0 +1,30 @@
+Exercise 1:
+Create a generic function wrapInArray that:
+Takes any value and returns it as a single-element array.
+soln: 
+function wrapInArray<T>(value: T): T[] {
+  return [value];
+}
+
+console.log(wrapInArray<number>(10));      // [10]
+console.log(wrapInArray<string>("Hello")); // ['Hello']
+
+Exercise 2:
+Create a generic class Logger<T> that:
+Stores a list of values of type T
+Has a method log(value: T) to add to the list
+Has a method printAll() to print them all
+
+class Logger<t>{
+    values: t;
+    log(value: t){
+        values.psuh(value);
+    }
+    printAll(): void{
+   forEach.values((val)=> console.log(val));
+    }
+}
+
+const log1 = new Logger();
+log1.log<string>("1");
+log1.log<number>(2);

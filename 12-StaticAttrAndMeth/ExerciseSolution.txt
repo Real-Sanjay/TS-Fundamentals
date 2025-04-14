@@ -1,0 +1,27 @@
+Exercise 1:
+Create a class User with:
+Static property userCount to track how many users were created.
+Static method getUserCount() that returns the count.
+Every time a user is created, increase the count.
+soln:
+class User{
+  static userCount: number = 0;
+
+  constructor(){
+      User.userCount++;
+  }
+
+ static getUserCount(): number{
+      return this.userCount; //this refers to User class
+  }
+}
+
+const userA = new User();
+const userB = new User();
+console.log(User.getUserCount());
+
+
+Exercise 2:
+Create a class MathUtils with:
+Static method square(n: number): number
+Static method cube(n: number): number
