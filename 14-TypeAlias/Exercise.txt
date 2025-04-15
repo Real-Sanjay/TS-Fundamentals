@@ -1,0 +1,6 @@
+Practice Exercises
+Exercise 1:
+Create a type alias called FullName for an object with firstName and lastName as string.
+
+Exercise 2:
+Create a type alias ResponseStatus for the strings 'ok' | 'not_found' | 'unauthorized'.

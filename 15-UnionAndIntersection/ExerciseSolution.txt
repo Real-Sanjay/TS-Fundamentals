@@ -1,0 +1,18 @@
+Exercise 1:
+Create a union type called PaymentMethod for "cash" | "card" | "upi".
+
+type PaymentMethod = 'cash' | 'card' | 'upi';
+let methodType: PaymentMethod = 'upi';
+
+Exercise 2:
+Create an intersection type called Developer that combines Person and Skills.
+soln:
+type Person = { name: string };
+type Skills = { languages: string[] };
+
+type Developer = Person & Skills;
+
+const dev: Developer = {
+  name: "Sanjay",
+  languages: ["JavaScript", "TypeScript"]
+};

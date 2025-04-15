@@ -1,0 +1,53 @@
+Type Aliases
+
+🔷 What is a Type Alias?
+A type alias allows you to give a name to any type (especially complex ones), making your code cleaner, shorter, and easier to read.
+
+✅ Syntax:
+type AliasName = ExistingType;
+
+📌 Example 1: Basic Alias
+code
+type Age = number;
+let myAge: Age = 25;
+Instead of writing number every time for age, you use Age.
+
+📌 Example 2: Tuple Type Alias
+code
+type Point = [number, number];
+const origin: Point = [0, 0];
+Now, anywhere you need a coordinate (tuple of two numbers), just use Point.
+
+📌 Example 3: Union Types with Alias
+code
+type Status = 'success' | 'error' | 'loading';
+let apiStatus: Status = 'loading';
+This makes it easy to manage values that can only be one of a few specific strings.
+
+📌 Example 4: Function Type Alias
+code
+type Logger = (message: string) => void;
+const log: Logger = (msg) => console.log(msg);
+log("Hello");
+
+✅ Use type when:
+You're working with primitive types, unions, tuples
+You need flexibility or want a short alias for complex types
+
+💡 Real-World Example
+code
+type Coordinate = {
+  x: number;
+  y: number;
+};
+
+type Shape = 'circle' | 'square' | 'rectangle';
+
+type DrawFunction = (shape: Shape, pos: Coordinate) => void;
+
+const draw: DrawFunction = (shape, position) => {
+  console.log(`Drawing a ${shape} at x:${position.x}, y:${position.y}`);
+};
+
+draw('circle', { x: 100, y: 200 });
+

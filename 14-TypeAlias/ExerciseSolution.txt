@@ -1,0 +1,15 @@
+Exercise 1:
+Create a type alias called FullName for an object with firstName and lastName as string.
+soln:
+type FullName = 
+{
+firstName:string, 
+secondName:string
+};
+
+Exercise 2:
+Create a type alias ResponseStatus for the strings 'ok' | 'not_found' | 'unauthorized'.
+soln:
+type ResponseStatus = 'ok' | 'not_found' | 'unauthorized';
+
+let status: ResponseStatus = 'ok';

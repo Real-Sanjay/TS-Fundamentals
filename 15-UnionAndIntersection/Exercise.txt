@@ -1,0 +1,6 @@
+Practice Exercises
+Exercise 1:
+Create a union type called PaymentMethod for "cash" | "card" | "upi".
+
+Exercise 2:
+Create an intersection type called Developer that combines Person and Skills.

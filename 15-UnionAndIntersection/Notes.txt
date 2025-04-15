@@ -1,0 +1,92 @@
+Union & Intersection Types
+🔷 Union Types (|)
+A union type means a value can be one of several types.
+
+✅ Syntax:
+type Result = string | number;
+This means the value can either be a string or a number.
+
+📌 Example 1: Union in Function Parameters
+code
+function printId(id: string | number) {
+  console.log("ID:", id);
+}
+
+printId(101);        // number
+printId("ABC101");   // string
+
+🔷 Intersection Types (&)
+An intersection type combines multiple types into one. The resulting type must include all properties from the combined types.
+
+✅ Syntax:
+type User = { name: string };
+type Admin = { role: string };
+type AdminUser = User & Admin;
+Now AdminUser must have both name and role.
+
+📌 Example 2: Intersection Type Object
+code
+const adminUser: AdminUser = {
+  name: "Sanjay",
+  role: "Manager"
+};
+
+
+Type Aliases + Union/Intersection
+Type aliases can be used to simplify unions or intersections for better readability:
+
+code
+type Success = { status: "success"; data: string };
+type Error = { status: "error"; errorMessage: string };
+
+type ApiResponse = Success | Error;
+
+function handleResponse(response: ApiResponse) {
+  if (response.status === "success") {
+    console.log("Data:", response.data);
+  } else {
+    console.log("Error:", response.errorMessage);
+  }
+}
+
+Combining Union & Intersection
+Let’s say we have:
+code
+type Individual = { name: string };
+type Organization = { companyName: string };
+type Contact = Individual | Organization;
+And to force having both:
+
+code
+type FullContact = Individual & Organization;
+🔍 in Operator with Union
+You can narrow down the type using the in keyword:
+
+code
+function processContact(c: Contact) {
+  if ("name" in c) {
+    console.log("Individual:", c.name);
+  } else {
+    console.log("Organization:", c.companyName);
+  }
+}
+
+ Real-World Example
+code
+type EmailUser = {
+  email: string;
+};
+
+type PhoneUser = {
+  phone: string;
+};
+
+type ContactUser = EmailUser | PhoneUser;
+
+function sendNotification(user: ContactUser) {
+  if ("email" in user) {
+    console.log(`Sending email to ${user.email}`);
+  } else {
+    console.log(`Sending SMS to ${user.phone}`);
+  }
+}
