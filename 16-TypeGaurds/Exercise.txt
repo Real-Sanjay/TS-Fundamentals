@@ -1,0 +1,6 @@
+Exercises
+Exercise 1:
+Write a function isNumber that checks if a value is a number using a custom type guard.
+
+Exercise 2:
+Create a function handlePet that accepts Fish | Bird and uses a custom type guard to call either swim() or fly().

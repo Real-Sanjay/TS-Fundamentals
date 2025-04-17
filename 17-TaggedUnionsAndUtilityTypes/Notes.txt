@@ -1,0 +1,88 @@
+ Discriminated Unions (Tagged Unions)
+ What Are Discriminated Unions?
+Discriminated Unions are a pattern used to combine multiple types into one union using a common literal property (called a "discriminant" or "tag") to distinguish between them.
+
+It helps TypeScript narrow down which exact type you’re working with based on a shared field.
+
+✨ Structure Example
+code:
+type Circle = {
+  kind: "circle";
+  radius: number;
+};
+
+type Square = {
+  kind: "square";
+  sideLength: number;
+};
+
+type Shape = Circle | Square;
+The kind property is the discriminant.
+
+🔁 Using with switch for Type Narrowing
+code:
+function getArea(shape: Shape): number {
+  switch (shape.kind) {
+    case "circle":
+      return Math.PI * shape.radius ** 2;
+    case "square":
+      return shape.sideLength ** 2;
+  }
+}
+✅ This avoids type errors because TypeScript knows what properties exist in each branch.
+
+🔐 Benefits:
+Clear structure.
+Safe type narrowing.
+Scales well with large codebases (more than 2–3 types).
+Great for state management and form logic.
+
+
+Utility Types
+Utility types let you transform existing types into new ones without rewriting them from scratch.
+
+Here are the most commonly used ones:
+
+1️⃣ Partial<Type>
+Makes all properties optional.
+code:
+type User = { name: string; age: number };
+type PartialUser = Partial<User>; 
+// { name?: string; age?: number }
+Great for update forms or PATCH APIs.
+
+2️⃣ Readonly<Type>
+Makes all properties readonly (immutable).
+
+code:
+type User = { name: string };
+const user: Readonly<User> = { name: "Sanjay" };
+user.name = "Ajay"; // ❌ Error: cannot assign to 'name'
+3️⃣ Record<Keys, Type>
+Creates an object type with specific keys and a specific value type.
+
+code:
+type Scores = Record<"math" | "science", number>;
+// Equivalent to: { math: number; science: number }
+Clean way to declare object mappings.
+
+4️⃣ Pick<Type, Keys>
+Picks certain properties from a type.
+
+code:
+type User = { name: string; age: number; email: string };
+type UserInfo = Pick<User, "name" | "email">;
+// { name: string; email: string }
+
+5️⃣ Omit<Type, Keys>
+Removes certain properties from a type.
+
+code:
+type User = { name: string; age: number; email: string };
+type UserWithoutEmail = Omit<User, "email">;
+// { name: string; age: number }
+
+Bonus Tip: Combine Them
+code:
+type PartialReadonlyUser = Readonly<Partial<User>>;
+// All properties optional AND readonly

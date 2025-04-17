@@ -1,0 +1,70 @@
+Modules (Import/Export)
+🔹 Why use Modules?
+Helps organize code by splitting logic across files.
+Makes it easy to reuse classes, functions, variables.
+Encourages cleaner, more maintainable code.
+
+Types of Exports
+
+🔸 1. Named Export
+code:
+// mathUtils.ts
+export function add(x: number, y: number) {
+  return x + y;
+}
+export const PI = 3.14;
+
+code:
+// app.ts
+import { add, PI } from './mathUtils';
+
+console.log(add(2, 3)); // 5
+You must import with exact names.
+
+🔸 2. Default Export
+
+code:
+// logger.ts
+export default function log(message: string) {
+  console.log("LOG:", message);
+}
+code:
+// app.ts
+import log from './logger';
+
+log("App started"); // LOG: App started
+You can name it whatever you want when importing.
+
+📦 Importing and Exporting Basics
+✅ Import from Same Directory
+code:
+import { someFunc } from './utils';
+✅ Import from Subdirectory
+code:
+import { helper } from './helpers/math';
+✅ Import from Parent Directory
+code:
+import { config } from '../config';
+
+⚙️ Complex Imports
+🔸 Aliases with as
+code:
+import { add as sum } from './mathUtils';
+🔸 Export All
+
+code:
+// allExports.ts
+export * from './mathUtils';
+export * from './logger';
+
+🔸 Export Group
+code:
+export { add, subtract } from './mathUtils';
+ Use Case Summary
+
+Feature	                Use When…
+Named Export	        You want to export multiple values from a file.
+Default Export	        You have a single main function/class per file.
+Aliases (as)	        There’s a name conflict or for better readability.
+Relative Imports (./)	Files are in same or nested directory.
+Parent Imports (../)	Files are in parent directories.

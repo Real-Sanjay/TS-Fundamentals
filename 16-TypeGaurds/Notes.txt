@@ -1,0 +1,92 @@
+Type Guards in TypeScript
+What is a Type Guard?
+A type guard helps you narrow down the type of a variable within a conditional block. It's how TypeScript figures out, "Hey, this value is definitely a string here" or "This is a number, for sure."
+
+Why?
+To safely access properties or call methods that belong to specific types only.
+
+Built-in Type Guards
+1️⃣ typeof — for primitive types
+code
+function printValue(val: string | number) {
+  if (typeof val === "string") {
+    console.log(val.toUpperCase());
+  } else {
+    console.log(val.toFixed(2));
+  }
+}
+✅ Use typeof with: string, number, boolean, symbol, bigint, undefined, and function.
+
+2️⃣ instanceof — for class instances
+code
+class Dog {
+  bark() { console.log("Woof!"); }
+}
+
+class Cat {
+  meow() { console.log("Meow!"); }
+}
+
+function speak(animal: Dog | Cat) {
+  if (animal instanceof Dog) {
+    animal.bark();
+  } else {
+    animal.meow();
+  }
+}
+3️⃣ in — for checking property existence
+code
+type User = { name: string };
+type Admin = { role: string };
+
+function identify(person: User | Admin) {
+  if ("name" in person) {
+    console.log("User:", person.name);
+  } else {
+    console.log("Admin:", person.role);
+  }
+}
+
+✨ Custom Type Guards
+Sometimes built-in ones aren’t enough. You can create your own using the is keyword.
+
+🔧 Syntax:
+code
+function isString(value: any): value is string {
+  return typeof value === "string";
+}
+
+📌 Example: Custom Type Guard
+code
+type Fish = { swim: () => void };
+type Bird = { fly: () => void };
+
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (pet as Fish).swim !== undefined;
+}
+
+function move(pet: Fish | Bird) {
+  if (isFish(pet)) {
+    pet.swim();
+  } else {
+    pet.fly();
+  }
+}
+🧪 Real-World Use Case: API Response
+code
+type Success = { status: "success"; data: string };
+type Error = { status: "error"; errorMsg: string };
+
+function isSuccess(res: Success | Error): res is Success {
+  return res.status === "success";
+}
+
+function handleResponse(res: Success | Error) {
+  if (isSuccess(res)) {
+    console.log("Data:", res.data);
+  } else {
+    console.log("Error:", res.errorMsg);
+  }
+}
+
+

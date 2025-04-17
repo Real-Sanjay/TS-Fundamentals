@@ -1,0 +1,13 @@
+Exercises
+Exercise 1:
+Create a discriminated union type for TextFile and ImageFile with tags "text" and "image" and a function processFile(file: File) that behaves differently based on the type.
+
+Exercise 2:
+Create a type Product and use:
+
+Partial for update requests
+
+Pick for showing only name and price
+
+Omit to remove internal fields like _id
+

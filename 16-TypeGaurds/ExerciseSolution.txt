@@ -1,0 +1,27 @@
+Exercise 1:
+Write a function isNumber that checks if a value is a number using a custom type guard.
+soln:
+idNumber(value: any): value is number{
+    return typeof value === "number"
+} 
+
+Exercise 2:
+Create a function handlePet that accepts Fish | Bird and uses a custom type guard to call either swim() or fly().
+
+soln:
+type Fish = {swim: ()=> void};
+type Bird = {fly: ()=>void};
+
+function isFish(pet: Fish | Bird): pet is Fish{
+    return (pet as Fish).swim !== undefined;
+}
+
+function  handlePet(pet: Fish | Bird){
+    if(isFish(pet)){
+        pet.swim();
+    }else{
+        pet.fly();
+    }
+}
+
+handlePet({swim: ()=> {console.log("swim")}});
