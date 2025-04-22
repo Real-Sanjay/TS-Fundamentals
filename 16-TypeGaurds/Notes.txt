@@ -28,7 +28,7 @@ class Cat {
 }
 
 function speak(animal: Dog | Cat) {
-  if (animal instanceof Dog) {
+  if (animal instanceof Dog) {3
     animal.bark();
   } else {
     animal.meow();

@@ -1,5 +1,4 @@
  Function Types (Basic to Advanced)
-
 🔹 Basic Function Types
 Parameter Types
 TypeScript requires you to define parameter types to avoid implicit any.

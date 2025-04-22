@@ -1,6 +1,4 @@
-     Any, Unknown & Type Casts 
-
-     Concept Overview
+ Any, Unknown & Type Casts 
 
 TypeScript introduces `any` and `unknown` to handle variables when the type is uncertain or dynamic:
 
