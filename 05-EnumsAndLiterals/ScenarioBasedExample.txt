@@ -1,20 +1,17 @@
- Real-World Scenario: E-commerce Order Management System
+Real-World Scenario: E-commerce Order Management System
 Imagine you're building an Order Management System for an e-commerce application. 
-
 You need to manage:
 
 The status of an order (Pending, Shipped, Delivered, Cancelled)
-
 The type of payment method (Cash, Card, UPI)
-
 And allow only certain size options for clothing items (small, medium, large)
-
 These are perfect cases for using enums and literal types.
 
 
 ✅ Enums: Managing Order Status
 Enums help group fixed states in your app — like the status of an order.
-code
+
+code:
 enum OrderStatus {
   Pending = "PENDING",
   Shipped = "SHIPPED",
@@ -41,17 +38,15 @@ const order1: Order = {
 
 updateOrderStatus(order1, OrderStatus.Shipped);
 
- Benefits:
+Benefits:
 Ensures only valid statuses can be assigned
-
 Better IDE support with autocomplete
-
 Centralized management of order states
 
 
-✅ Literal Types: Restricting Size Options
+Literal Types: Restricting Size Options
 Let’s say a clothing product can only come in "small", "medium", or "large". You can use a literal union type.
-code
+code:
 type Size = "small" | "medium" | "large";
 
 interface Product {
@@ -69,7 +64,7 @@ const tshirt: Product = {
 // tshirt.size = "extra-large"; ❌ Error
 This ensures you don’t accidentally use unsupported sizes like "extra-large" or "tiny".
 
-✅ Another Enum Example: Payment Methodcode
+Another Enum Example: Payment Methodcode
 enum PaymentMethod {
   Cash = "CASH",
   Card = "CARD",

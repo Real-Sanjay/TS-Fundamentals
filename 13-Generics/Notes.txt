@@ -1,9 +1,8 @@
-4.4 - Generics
+Generics
 🔷 What Are Generics?
 Generics allow you to create reusable classes, functions, and interfaces that work with multiple types while still maintaining type safety.
 
 Instead of writing:
-
 code:
 function echoString(value: string): string {
   return value;

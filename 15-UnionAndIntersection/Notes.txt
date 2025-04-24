@@ -2,12 +2,12 @@ Union & Intersection Types
 🔷 Union Types (|)
 A union type means a value can be one of several types.
 
-✅ Syntax:
+Syntax:
 type Result = string | number;
 This means the value can either be a string or a number.
 
 📌 Example 1: Union in Function Parameters
-code
+code:
 function printId(id: string | number) {
   console.log("ID:", id);
 }
@@ -25,7 +25,7 @@ type AdminUser = User & Admin;
 Now AdminUser must have both name and role.
 
 📌 Example 2: Intersection Type Object
-code
+code:
 const adminUser: AdminUser = {
   name: "Sanjay",
   role: "Manager"
@@ -51,7 +51,7 @@ function handleResponse(response: ApiResponse) {
 
 Combining Union & Intersection
 Let’s say we have:
-code
+code:
 type Individual = { name: string };
 type Organization = { companyName: string };
 type Contact = Individual | Organization;

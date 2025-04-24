@@ -1,9 +1,8 @@
-2.2 - Arrays & Tuples
+Arrays & Tuples
 🔹 Arrays in TypeScript
 In TypeScript, arrays are ordered collections of elements. It is highly recommended to use arrays with homogeneous types (same data type) for better type checking and consistency.
 
 Syntax
-
 // Array of numbers
 const numbers: number[] = [1, 2, 3, 4];
 
@@ -14,7 +13,6 @@ const fruits: string[] = ["apple", "banana", "orange"];
 const emptyList: string[] = [];
 
 Nested Arrays
-
 // 2D array of numbers
 const matrix: number[][] = [
   [1, 2],

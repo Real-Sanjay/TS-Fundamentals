@@ -16,8 +16,8 @@ let task: Level = Level.High;
 Exercise 3: Create a string enum PaymentStatus with values: "PENDING", "COMPLETED", "FAILED".
 soln:
 enum PaymentStatus {
-    pending = "PENDING",
-    completed = "COMPLETED",
+    Pending = "PENDING",
+    Completed = "COMPLETED",
     Failed = "FAILED"
 }
 

@@ -92,13 +92,10 @@ function login(creds: Credentials) {
 login({ username: "admin", password: "1234" });
 
 
-🌐 Real-World Scenario
+Real-World Scenario
 You’re building a task management system. You want to:
-
 Define a structure for users, tasks, and admins.
-
 Allow optional details like bio or dueDate.
-
 Extend interfaces so admins inherit from users but have extra permissions.
 
 code: 

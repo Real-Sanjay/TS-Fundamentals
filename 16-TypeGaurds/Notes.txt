@@ -47,10 +47,10 @@ function identify(person: User | Admin) {
   }
 }
 
-✨ Custom Type Guards
+Custom Type Guards
 Sometimes built-in ones aren’t enough. You can create your own using the is keyword.
 
-🔧 Syntax:
+Syntax:
 code
 function isString(value: any): value is string {
   return typeof value === "string";
@@ -72,7 +72,8 @@ function move(pet: Fish | Bird) {
     pet.fly();
   }
 }
-🧪 Real-World Use Case: API Response
+
+Real-World Use Case: API Response
 code
 type Success = { status: "success"; data: string };
 type Error = { status: "error"; errorMsg: string };

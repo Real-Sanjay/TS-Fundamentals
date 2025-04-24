@@ -64,15 +64,11 @@ function getData(value: number | string): string {
 }
 
 
-🌐 Real-World Scenario
+Real-World Scenario
 You’re building a user management dashboard. You want to:
-
 Accept a userID or username to fetch user data (overloaded function)
-
 Allow an optional filter param for pagination (optional parameter)
-
 Provide a default role if not passed (default parameter)
-
 Collect dynamic tags added to a user (rest parameter)
 
 code: 

@@ -5,7 +5,6 @@ Makes it easy to reuse classes, functions, variables.
 Encourages cleaner, more maintainable code.
 
 Types of Exports
-
 🔸 1. Named Export
 code:
 // mathUtils.ts
@@ -50,8 +49,8 @@ import { config } from '../config';
 🔸 Aliases with as
 code:
 import { add as sum } from './mathUtils';
-🔸 Export All
 
+🔸 Export All
 code:
 // allExports.ts
 export * from './mathUtils';
@@ -64,7 +63,7 @@ export { add, subtract } from './mathUtils';
 
 Feature	                Use When…
 Named Export	        You want to export multiple values from a file.
-Default Export	        You have a single main function/class per file.
+Default Export	      You have a single main function/class per file.
 Aliases (as)	        There’s a name conflict or for better readability.
 Relative Imports (./)	Files are in same or nested directory.
 Parent Imports (../)	Files are in parent directories.

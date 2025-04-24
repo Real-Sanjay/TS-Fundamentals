@@ -1,10 +1,9 @@
- Discriminated Unions (Tagged Unions)
- What Are Discriminated Unions?
+Discriminated Unions (Tagged Unions)
+What Are Discriminated Unions?
 Discriminated Unions are a pattern used to combine multiple types into one union using a common literal property (called a "discriminant" or "tag") to distinguish between them.
-
 It helps TypeScript narrow down which exact type you’re working with based on a shared field.
 
-✨ Structure Example
+Structure Example
 code:
 type Circle = {
   kind: "circle";
@@ -19,7 +18,7 @@ type Square = {
 type Shape = Circle | Square;
 The kind property is the discriminant.
 
-🔁 Using with switch for Type Narrowing
+Using with switch for Type Narrowing
 code:
 function getArea(shape: Shape): number {
   switch (shape.kind) {
@@ -29,9 +28,9 @@ function getArea(shape: Shape): number {
       return shape.sideLength ** 2;
   }
 }
-✅ This avoids type errors because TypeScript knows what properties exist in each branch.
+This avoids type errors because TypeScript knows what properties exist in each branch.
 
-🔐 Benefits:
+Benefits:
 Clear structure.
 Safe type narrowing.
 Scales well with large codebases (more than 2–3 types).
@@ -40,7 +39,6 @@ Great for state management and form logic.
 
 Utility Types
 Utility types let you transform existing types into new ones without rewriting them from scratch.
-
 Here are the most commonly used ones:
 
 1️⃣ Partial<Type>
@@ -53,14 +51,13 @@ Great for update forms or PATCH APIs.
 
 2️⃣ Readonly<Type>
 Makes all properties readonly (immutable).
-
 code:
 type User = { name: string };
 const user: Readonly<User> = { name: "Sanjay" };
 user.name = "Ajay"; // ❌ Error: cannot assign to 'name'
+
 3️⃣ Record<Keys, Type>
 Creates an object type with specific keys and a specific value type.
-
 code:
 type Scores = Record<"math" | "science", number>;
 // Equivalent to: { math: number; science: number }

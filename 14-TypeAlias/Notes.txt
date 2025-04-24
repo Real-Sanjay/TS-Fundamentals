@@ -3,11 +3,11 @@ Type Aliases
 🔷 What is a Type Alias?
 A type alias allows you to give a name to any type (especially complex ones), making your code cleaner, shorter, and easier to read.
 
-✅ Syntax:
+Syntax:
 type AliasName = ExistingType;
 
 📌 Example 1: Basic Alias
-code
+code:
 type Age = number;
 let myAge: Age = 25;
 Instead of writing number every time for age, you use Age.
@@ -30,12 +30,12 @@ type Logger = (message: string) => void;
 const log: Logger = (msg) => console.log(msg);
 log("Hello");
 
-✅ Use type when:
+Use type when:
 You're working with primitive types, unions, tuples
 You need flexibility or want a short alias for complex types
 
-💡 Real-World Example
-code
+Real-World Example
+code:
 type Coordinate = {
   x: number;
   y: number;

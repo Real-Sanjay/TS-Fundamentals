@@ -5,13 +5,13 @@ A class can:
 Extend another class (inherit properties/methods)
 Implement one or more interfaces (contract of required methods/properties)
 
-An interface:
+An interface: 
 Describes a shape or structure
 Cannot contain implementation
 Is abstract by nature
 
 
-📘 implements Keyword
+implements Keyword
 When a class uses implements, it must implement all the members (properties and methods) from that interface, and all must be public.
 code: 
 interface Printable {
@@ -26,7 +26,7 @@ class Invoice implements Printable {
   }
 }
 
-🔁 Extending and Implementing Together
+Extending and Implementing Together
 code: 
 interface Identifiable {
   id: number;
@@ -44,7 +44,7 @@ class User extends BaseEntity implements Identifiable {
 ✅ User inherits createdAt from BaseEntity
 ✅ User must define all from Identifiable
 
-🔀 Polymorphism with Interfaces
+Polymorphism with Interfaces
 You can treat different classes as the same type using interfaces.
 
 code: 
@@ -74,12 +74,12 @@ const fileLogger = new FileLogger();
 performLogging(consoleLogger, "App started");
 performLogging(fileLogger, "Saving to logs...");
 
-🔍 Use case: Useful for Dependency Injection, where implementation can change but the interface contract stays the same.
+Use case: Useful for Dependency Injection, where implementation can change but the interface contract stays the same.
 
-🔧 Why Use Interfaces Instead of Abstract Classes?
+Why Use Interfaces Instead of Abstract Classes?
 Feature	                 Interface	             Abstract Class
 Implements multiple?	    ✅ Yes	            🚫 No (only one abstract class)
-Has method bodies?	        🚫 No	             ✅ Yes
+Has method bodies?	      🚫 No	             ✅ Yes
 Used for contracts only?	✅ Yes	            🚫 Not ideal
 
 Use interface when:

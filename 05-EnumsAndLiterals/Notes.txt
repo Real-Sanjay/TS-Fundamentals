@@ -3,7 +3,7 @@
 🔹 Literals in TypeScript
 Literal types in TypeScript allow you to specify exact values a variable can take. They’re useful for restricting variable assignments to specific values only.
 
-✅ Example – Literal Types
+Example – Literal Types
 
 let direction: "left" | "right" | "up" | "down";
 
@@ -37,12 +37,12 @@ let move: Direction = Direction.Up;
 console.log(move); // Output: 0
 You can assign custom numeric values:
 
-
 enum StatusCode {
   Success = 200,
   NotFound = 404,
   ServerError = 500
 }
+
 2. String Enums
 
 enum LogLevel {
@@ -54,13 +54,10 @@ enum LogLevel {
 let level: LogLevel = LogLevel.Warning;
 console.log(level); // Output: "WARNING"
 
-🔧 When to Use Enums
-    To group related constants
-
-    For better autocomplete in IDEs
-
-    To avoid magic strings or numbers
-
-    For easier refactoring and renaming
+When to Use Enums
+To group related constants
+For better autocomplete in IDEs
+To avoid magic strings or numbers
+For easier refactoring and renaming
 
 

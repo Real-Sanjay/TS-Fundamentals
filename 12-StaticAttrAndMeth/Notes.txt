@@ -4,7 +4,7 @@ static members (attributes or methods) belong to the class itself, not the insta
 They are shared across all instances.
 Accessed directly using the class name, not this or object instance.
 
-📌 Syntax
+Syntax
 code:
 class MyClass {
   static counter: number = 0;

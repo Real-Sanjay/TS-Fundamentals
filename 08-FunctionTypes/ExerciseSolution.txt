@@ -18,9 +18,7 @@ function greetUser(name: string, title?: string): string {
 
 Exercise 3:
 Define an overloaded function format:
-
 format(value: number): string
-
 format(value: Date): string Returns "Formatted number: X" or "Formatted date: YYYY-MM-DD".
 
 soln: 

@@ -22,9 +22,7 @@ console.log(isString!.length()) // Works, but risky if getMessage() returns unde
 
 Exercise 3:
 Refactor the following code using optional chaining:
-
-code
-
+code:
 if (person && person.address && person.address.city) {
   console.log(person.address.city);
 }
